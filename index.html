@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apalo AI — Create Better Content with Less Effort</title>
+  <meta name="description" content="An all-in-one AI platform to generate images, videos, and text faster, smarter, and more creatively." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ CURSOR GLOW ═══ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Apalo<span class="logo-accent">AI</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features" class="nav-link">Use Cases</a></li>
+        <li><a href="#digital-art" class="nav-link">Digital Art</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#news" class="nav-link">News</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-selector" id="langSelector">
+          <span class="lang-current">🌐 EN</span>
+          <div class="lang-dropdown">
+            <a href="#">English</a>
+            <a href="#">Bengali</a>
+            <a href="#">French</a>
+            <a href="#">Chinese</a>
+            <a href="#">Arabic</a>
+            <a href="#">Spanish</a>
+            <a href="#">German</a>
+          </div>
+        </div>
+        <a href="https://apaloai.com/login" class="btn-ghost">Login</a>
+        <a href="https://apaloai.com/registration" class="btn-primary">Get Started Free</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <canvas id="particleCanvas"></canvas>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        AI-Powered Content Platform
+      </div>
+
+      <h1 class="hero-title">
+        Create Better Content<br />
+        <span class="title-gradient">with Less Effort.</span>
+      </h1>
+
+      <div class="hero-tags">
+        <span class="tag" id="tag1">Social Media Marketing</span>
+        <span class="tag" id="tag2">Content Improver</span>
+        <span class="tag" id="tag3">Video Scripts</span>
+        <span class="tag" id="tag4">Blog Writing</span>
+        <span class="tag" id="tag5">Digital Art</span>
+      </div>
+
+      <p class="hero-subtitle">
+        Write <strong>10x faster</strong>, engage your audience &amp; never struggle with the blank page again.
+        The #1 AI collaborative software you ever need.
+      </p>
+
+      <div class="hero-cta">
+        <a href="https://apaloai.com/registration" class="btn-hero-primary">
+          <span>Get Started for Free</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://apaloai.com/page/about-us" class="btn-hero-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          Learn More
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="38">0</span><span>+</span>
+          <span class="stat-label">AI Templates</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="10">0</span><span>x</span>
+          <span class="stat-label">Faster Writing</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="5">0</span><span>$</span>
+          <span class="stat-label">Starting Price</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="ai-card glass-card">
+        <div class="card-header">
+          <div class="card-dots"><span></span><span></span><span></span></div>
+          <span class="card-title">AI Content Generator</span>
+        </div>
+        <div class="card-body">
+          <div class="prompt-label">Your prompt</div>
+          <div class="prompt-text">Write a compelling blog post about sustainable tech innovations...</div>
+          <div class="generating-bar">
+            <div class="bar-fill"></div>
+          </div>
+          <div class="ai-output">
+            <span class="output-tag">AI Output</span>
+            <p class="typewriter" id="typewriterText">The future of sustainable technology is here. From solar-powered data centers to AI-driven energy optimization, innovators around the globe are...</p>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="card-btn active">✨ Regenerate</button>
+          <button class="card-btn">📋 Copy</button>
+          <button class="card-btn">💾 Save</button>
+        </div>
+      </div>
+
+      <div class="floating-badge badge-top">
+        <span>🚀</span> 38+ Templates
+      </div>
+      <div class="floating-badge badge-bottom">
+        <span>⚡</span> Generate in seconds
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES ═══ -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label">ARTIFICIAL INTELLIGENCE</div>
+      <h2 class="section-title">Generate Quality Content <span class="gradient-text">Effortlessly</span></h2>
+      <p class="section-subtitle">ApaloAI is the ultimate AI-powered content tool to help you quickly create high-quality content.</p>
+
+      <div class="features-grid">
+        <div class="feature-card" data-delay="0">
+          <div class="feature-icon" style="--icon-color: #7c3aed;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Let AI Do the Magic</h3>
+          <p>Unlock the power of AI with cutting-edge technology that helps you generate well-crafted and joyfully original content effortlessly.</p>
+          <div class="feature-arrow">→</div>
+        </div>
+
+        <div class="feature-card" data-delay="100">
+          <div class="feature-icon" style="--icon-color: #06b6d4;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Save Time &amp; Money</h3>
+          <p>Our automated system empowers you to cut down expenses while getting great results — faster than ever before.</p>
+          <div class="feature-arrow">→</div>
+        </div>
+
+        <div class="feature-card" data-delay="200">
+          <div class="feature-icon" style="--icon-color: #10b981;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Intuitive Interface</h3>
+          <p>Minimal learning curve makes ApaloAI the ideal choice for anyone who needs quality content quickly at scale.</p>
+          <div class="feature-arrow">→</div>
+        </div>
+
+        <div class="feature-card" data-delay="300">
+          <div class="feature-icon" style="--icon-color: #f59e0b;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Human-like Content</h3>
+          <p>ApaloAI creates engaging content for blogs, social media, videos, SEO, and much more that resonates naturally.</p>
+          <div class="feature-arrow">→</div>
+        </div>
+
+        <div class="feature-card feature-wide" data-delay="400">
+          <div class="feature-icon" style="--icon-color: #ec4899;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9H21" stroke="currentColor" stroke-width="2"/><path d="M9 21V9" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>38+ Ready-Made Templates</h3>
+          <p>Our use case templates save your time and make your work much easier. Create custom use cases of your preferences and save them for future use. Blog posts, landing pages, ads, emails, and so much more.</p>
+          <a href="https://apaloai.com/use-cases" class="feature-link">See all use cases →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-label">SIMPLE PROCESS</div>
+      <h2 class="section-title">Be the King of <span class="gradient-text">Content</span></h2>
+      <p class="section-subtitle">You give a few instructions and our trained AI will do all the hassle for you.</p>
+
+      <div class="steps-container">
+        <div class="step-line"></div>
+        <div class="step" data-step="1">
+          <div class="step-number">01</div>
+          <div class="step-content glass-card">
+            <div class="step-icon">📋</div>
+            <h3>Select Use Case Template</h3>
+            <p>Browse from 38+ pre-built templates or create your own custom template for any content need.</p>
+          </div>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-number">02</div>
+          <div class="step-content glass-card">
+            <div class="step-icon">⌨️</div>
+            <h3>Enter Keywords &amp; Instructions</h3>
+            <p>Provide specific keywords and see the magic happen. Our AI understands context deeply.</p>
+          </div>
+        </div>
+        <div class="step" data-step="3">
+          <div class="step-number">03</div>
+          <div class="step-content glass-card">
+            <div class="step-icon">✅</div>
+            <h3>Content is Ready!</h3>
+            <p>Your content is ready to use. Edit, update, or regenerate with a single click.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-cta">
+        <p class="no-card">No credit card required.</p>
+        <a href="https://apaloai.com/registration" class="btn-primary large">Start Free Trial Today ✨</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DIGITAL ART ═══ -->
+  <section class="digital-art" id="digital-art">
+    <div class="container">
+      <div class="art-content">
+        <div class="section-label">IMAGE GENERATOR</div>
+        <h2 class="section-title">Generate Digital Arts <span class="gradient-text">Like Never Before</span></h2>
+        <p>Create AI art or images from text that turns your imagination into unique images in seconds. Finally, you'll have the perfect picture to match your message.</p>
+
+        <ul class="art-features">
+          <li>
+            <span class="check-icon">✓</span>
+            <span>Various Resolution Options</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span>Royalty-free Commercial Use</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span>No Watermark</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span>Instant Generation</span>
+          </li>
+        </ul>
+
+        <div class="art-actions">
+          <a href="https://www.youtube.com/watch?v=qTgPSKKjfVg" class="btn-ghost-outline" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            Watch Demo
+          </a>
+          <a href="https://apaloai.com/page/about-us" class="btn-primary">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="art-showcase">
+        <div class="art-grid">
+          <div class="art-item art-large">
+            <img src="https://picsum.photos/seed/ai1/400/300" alt="AI Art 1" loading="lazy" />
+            <div class="art-overlay">
+              <span>Abstract Dreams</span>
+            </div>
+          </div>
+          <div class="art-item">
+            <img src="https://picsum.photos/seed/ai2/200/200" alt="AI Art 2" loading="lazy" />
+            <div class="art-overlay"><span>Neon City</span></div>
+          </div>
+          <div class="art-item">
+            <img src="https://picsum.photos/seed/ai3/200/200" alt="AI Art 3" loading="lazy" />
+            <div class="art-overlay"><span>Cosmic Mind</span></div>
+          </div>
+          <div class="art-item">
+            <img src="https://picsum.photos/seed/ai4/200/200" alt="AI Art 4" loading="lazy" />
+            <div class="art-overlay"><span>Digital Soul</span></div>
+          </div>
+          <div class="art-item">
+            <img src="https://picsum.photos/seed/ai5/200/200" alt="AI Art 5" loading="lazy" />
+            <div class="art-overlay"><span>Future Vision</span></div>
+          </div>
+        </div>
+
+        <div class="art-prompt-demo glass-card">
+          <span class="prompt-chip">✍️ Text Prompt</span>
+          <p class="demo-prompt">"A futuristic cyberpunk city at night with neon lights reflecting on rain-soaked streets"</p>
+          <div class="arrow-down">↓</div>
+          <span class="prompt-chip">🖼️ Generated Image</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRICING ═══ -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-label">PRICING</div>
+      <h2 class="section-title">Simple, <span class="gradient-text">Transparent</span> Pricing</h2>
+      <p class="section-subtitle">We offer flexible pricing plans so everyone can find one that suits their needs.</p>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="pricing-card" id="plan-starter">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-name">Starter</div>
+          <div class="plan-price">
+            <span class="price-symbol">$</span>
+            <span class="price-amount">5</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="plan-desc">Perfect for individuals getting started with AI content.</p>
+          <ul class="plan-features">
+            <li><span class="feat-check">✓</span> Template Access</li>
+            <li class="feat-no"><span class="feat-x">✗</span> Long Article</li>
+            <li><span class="feat-check">✓</span> Code Generator</li>
+            <li><span class="feat-check">✓</span> AI Chat</li>
+            <li><span class="feat-check">✓</span> AI Chatbot</li>
+            <li class="feat-no"><span class="feat-x">✗</span> Text to Video</li>
+          </ul>
+          <a href="https://apaloai.com/registration" class="plan-btn plan-btn-outline">Get Started</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="pricing-card pricing-featured" id="plan-premium">
+          <div class="plan-glow"></div>
+          <div class="plan-badge featured-badge">Best Value</div>
+          <div class="plan-name">Premium</div>
+          <div class="plan-price">
+            <span class="price-symbol">$</span>
+            <span class="price-amount">10</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="plan-desc">Full power for professionals and growing teams.</p>
+          <ul class="plan-features">
+            <li><span class="feat-check">✓</span> Template Access</li>
+            <li><span class="feat-check">✓</span> Long Article</li>
+            <li><span class="feat-check">✓</span> Code Generator</li>
+            <li><span class="feat-check">✓</span> AI Chat</li>
+            <li><span class="feat-check">✓</span> AI Chatbot</li>
+            <li><span class="feat-check">✓</span> Text to Video</li>
+          </ul>
+          <a href="https://apaloai.com/registration" class="plan-btn plan-btn-primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA BANNER ═══ -->
+  <section class="cta-banner">
+    <div class="cta-orb cta-orb-1"></div>
+    <div class="cta-orb cta-orb-2"></div>
+    <div class="container cta-content">
+      <h2>Harmony with Machines<br /><span class="gradient-text">Beyond Imagination.</span></h2>
+      <p>Explore ApaloAI for free to see the potential and how it can help to autopilot the content creation process.</p>
+      <div class="cta-btns">
+        <a href="https://apaloai.com/registration" class="btn-hero-primary">Register Now →</a>
+        <a href="https://apaloai.com/pricing" class="btn-hero-ghost">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">Apalo<span class="logo-accent">AI</span></span>
+          </a>
+          <p>An all-in-one AI platform to generate images, videos, and text faster, smarter, and more creatively.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="https://apaloai.com/page/about-us">About Us</a></li>
+            <li><a href="https://apaloai.com/page/contact-us">Contact Us</a></li>
+            <li><a href="https://apaloai.com/page/privacy-policy">Privacy Policy</a></li>
+            <li><a href="https://apaloai.com/page/terms">Terms of Service</a></li>
+            <li><a href="https://apaloai.com/page/refund-policy">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="https://apaloai.com/use-cases">Use Cases</a></li>
+            <li><a href="https://apaloai.com/#digital_art">Digital Art</a></li>
+            <li><a href="https://apaloai.com/pricing">Pricing</a></li>
+            <li><a href="https://apaloai.com/blogs">News &amp; Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="contact-list">
+            <li>
+              <span>📍</span>
+              <span>1001 S Main St. Ste 500,<br />Kalispell, Montana, 59901</span>
+            </li>
+            <li>
+              <span>📞</span>
+              <a href="tel:+13304909077">+1 330 490 9077</a>
+            </li>
+            <li>
+              <span>✉️</span>
+              <a href="mailto:info@apaloai.com">info@apaloai.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Apalo AI LLC, All Rights Reserved.</p>
+        <p>Made with ❤️ for creators worldwide</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
